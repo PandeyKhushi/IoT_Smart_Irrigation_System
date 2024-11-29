@@ -6,4 +6,4 @@ Developed a system to measure soil moisture levels using a sensor and control a 
 Arduino Cloud.
 ## Future Scope:
 1.Website or Mobile Application for Monitoring and Control
-2.Support for Multiple Sensors like pH level, temperature and humidity sensors.
+/newline 2.Support for Multiple Sensors like pH level, temperature and humidity sensors.
