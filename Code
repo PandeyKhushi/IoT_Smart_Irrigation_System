@@ -1,0 +1,41 @@
+# This code is designed for an Arduino-based soil moisture monitoring and automated irrigation system. The system uses a soil moisture sensor to measure the moisture level of the soil and a relay module to control a water pump.
+// Define pin connections
+const int moistureSensorPin = A0;    // Analog pin connected to sensor AOUT
+const int relayPin = 4;              // Digital pin connected to relay IN
+
+// Define moisture threshold
+const int moistureThreshold = 600;   // Adjust based on calibration
+
+void setup() {
+  // Initialize Serial Monitor
+  Serial.begin(9600);
+  
+  // Initialize relay pin as OUTPUT
+  pinMode(relayPin, OUTPUT);
+  
+  // Ensure relay is off initially
+  digitalWrite(relayPin, LOW); // Assuming relay is active LOW
+}
+
+void loop() {
+  // Read analog value from moisture sensor
+  int sensorValue = analogRead(moistureSensorPin);
+  
+  // Print sensor value to Serial Monitor
+  Serial.print("Soil Moisture Level: ");
+  Serial.println(sensorValue);
+  
+  // Control relay based on moisture level
+  if (sensorValue < moistureThreshold) {
+    // Soil is dry, motor should be off
+    digitalWrite(relayPin, LOW); // Turn ON the relay (green light ON)
+    Serial.println("Motor OFF: Relay is ON (green light).");
+  } else {
+    // Soil is moist, motor should be on
+    digitalWrite(relayPin, HIGH); // Turn OFF the relay (green light OFF)
+    Serial.println("Motor ON: Relay is OFF (no green light).");
+  }
+  
+  // Wait for a second before next reading
+  delay(1000);
+}
