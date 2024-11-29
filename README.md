@@ -5,5 +5,4 @@ Developed a system to measure soil moisture levels using a sensor and control a 
  Arduino UNO R4 wifi board, Soil Moisture Sensor,Relay Module,Water Pump,
 Arduino Cloud.
 ## Future Scope:
-1.Website or Mobile Application for Monitoring and Control
-/newline 2.Support for Multiple Sensors like pH level, temperature and humidity sensors.
+Website or Mobile Application for Monitoring and Control, Support for Multiple Sensors like pH level, temperature and humidity sensors
